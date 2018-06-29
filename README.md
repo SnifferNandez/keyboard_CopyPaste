@@ -28,7 +28,7 @@ keypasteHello World
 
 * **Carlos Fernandez** - *Initial work* - [SnifferNandez](https://github.com/SnifferNandez)
 
-See also the list of [contributors](https://github.com/csieteco/mvp_vocational_test/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/SnifferNandez/keyboard_CopyPaste/contributors) who participated in this project.
 
 ## ToDo
 [ ] Test UnicodeEncodeError
