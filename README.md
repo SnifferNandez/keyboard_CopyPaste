@@ -32,16 +32,18 @@ Note: On X11 systems, Xerox requires Xclip, which can be found through your syst
 To install it simply:
 
 ```
-$ pip install pyautogui
+$ pip install keyboard
 ```
-Note: To install Pillow on Linux you may need to install additional libraries to make sure Pillow's PNG/JPEG works correctly. See:
+Note: Need more test to improve the functionality, for example, this chars have issues in some cases:
 
-    https://stackoverflow.com/questions/7648200/pip-install-pil-e-tickets-1-no-jpeg-png-support
-    http://ubuntuforums.org/showthread.php?t=1751455
+    keyboard.send("#")
+    keyboard.send("=")
+    keyboard.send("(")
+    keyboard.send(")")
 
 #### PyAutoGUI (optional)
 
-This package is not more considered because some [keyboard support issues exists](https://github.com/asweigart/pyautogui/issues/137). If you prefer this library over keyboard change the *usePyautogui* variable to True.
+This package optional considered because some [keyboard support issues exists](https://github.com/asweigart/pyautogui/issues/137). If you prefer this library over keyboard change the *usePyautogui* variable to True.
 
 First:
 * *Windows* has no dependencies.
@@ -55,10 +57,16 @@ Finally:
 ```
 $ pip install pyautogui
 ```
-Note: To install Pillow on Linux you may need to install additional libraries to make sure Pillow's PNG/JPEG works correctly. See:
+Note 1: To install Pillow on Linux you may need to install additional libraries to make sure Pillow's PNG/JPEG works correctly. See:
 
     https://stackoverflow.com/questions/7648200/pip-install-pil-e-tickets-1-no-jpeg-png-support
     http://ubuntuforums.org/showthread.php?t=1751455
+
+Note 2: Need more test to improve the functionality, for example, this chars have issues in some cases:
+
+    pyautogui.press("'")
+    pyautogui.press("=")
+    pyautogui.press(":")
 
 ## Usage
 
