@@ -10,7 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 This project use:
 * [Xerox](https://github.com/kennethreitz/xeroxlibrary)
-* [PyAutoGUI](https://github.com/asweigart/pyautogui)
+* ~~[PyAutoGUI](https://github.com/asweigart/pyautogui)~~
+* [Keyboard](https://github.com/boppreh/keyboard)
 
 #### Xerox
 
@@ -23,7 +24,24 @@ Note: If you are installing xerox on Windows, you will also need to install the 
 
 Note: On X11 systems, Xerox requires Xclip, which can be found through your system package manager (e.g. apt-get install xclip) or at [https://github.com/astrand/xclip](https://github.com/astrand/xclip).
 
-#### PyAutoGUI
+#### Keyboard
+
+* Works with Windows and Linux (requires sudo), with experimental OS X support.
+* Zero dependencies.
+
+To install it simply:
+
+```
+$ pip install pyautogui
+```
+Note: To install Pillow on Linux you may need to install additional libraries to make sure Pillow's PNG/JPEG works correctly. See:
+
+    https://stackoverflow.com/questions/7648200/pip-install-pil-e-tickets-1-no-jpeg-png-support
+    http://ubuntuforums.org/showthread.php?t=1751455
+
+#### PyAutoGUI (optional)
+
+This package is not more considered because some [keyboard support issues exists](https://github.com/asweigart/pyautogui/issues/137). If you prefer this library over keyboard change the *usePyautogui* variable to True.
 
 First:
 * *Windows* has no dependencies.

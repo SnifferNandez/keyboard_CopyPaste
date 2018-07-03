@@ -1,6 +1,5 @@
 import time
 import xerox
-from pyautogui import typewrite, press
 import threading
 
 useIfStarts = 'keypaste'
@@ -8,6 +7,14 @@ timeToKeystrokes = 5 # Time between trigger and generate keystrokes events
 secs_between_keys = 0.1
 setMultiThread = False
 sleepTime = 1 # Time between every clipboard verification
+usePyautogui = False # Select method to use for keystroke
+
+if usePyautogui:
+  from pyautogui import typewrite, press
+  keystroke = press
+else:
+  import keyboard
+  keystroke = keyboard.send
 
 def welcome():
   print "Waiting for changed clipboard, starts with '%s'. Use CTRL+C to stop." % useIfStarts
@@ -18,13 +25,16 @@ def bye():
   xerox.copy(u'Keyboard Paste as typing inactive :(')
 
 def PressKey(key):
-  pass
-  #press(key)
+  if not usePyautogui and key in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+    key = 'shift+' + key
+  keystroke(key)
 
 def PasteKeystrokes(clipboard):
   print 'Clipboard detected, writing on %s seconds' % timeToKeystrokes
   time.sleep(timeToKeystrokes)
-  typewrite(clipboard, interval=secs_between_keys)
+  for key in clipboard:
+    PressKey(key)
+    time.sleep(secs_between_keys)
 
 def simpleMain():
   try:
